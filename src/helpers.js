@@ -1,5 +1,5 @@
-const CONTRACT_ADDRESS = "0xc4f18041a779Df4e7455900200c07291f8D771eD";
-const ABI_URL = "https://gist.githubusercontent.com/goodstemy/fbfd178b531825aa0bff4f297d8b7259/raw/fe2ba5dc2050b43325a0b3a87e9f74208026644d/ValidatorsListAbi.json";
+const CONTRACT_ADDRESS = "0xc6de26CAa259918ff44B661C45242E400B207858";
+const ABI_URL = "https://gist.githubusercontent.com/goodstemy/df155f91c2603d770f83a5a4809ef093/raw/587bd2aeb0d3a4b4afe6badc15709712ce99a356/ValidatorsListAbi.json";
 
 async function getCandidates(web3) {
   let abi;
