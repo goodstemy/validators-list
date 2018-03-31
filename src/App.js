@@ -4,6 +4,7 @@ import Validator from './Components/Validator';
 import Menu from './Components/Menu';
 import getWeb3 from './js/getWeb3';
 import helpers from './helpers';
+import { ToastContainer, toast } from 'react-toastify';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class App extends Component {
     try {
       web3 = await getWeb3();
     } catch(err) {
+      toast.error(`Error while injecting web3: ${err}`);
       console.error(`Error while injecting web3: ${err}`);
+      return;
     }
 
     this.setState({web3});
@@ -31,6 +34,7 @@ class App extends Component {
     try {
       validators = await helpers.getValidators(web3)
     } catch (err) {
+      toast.error(`Error while getting validators: ${err}`);
       console.error(`Error while getting validators: ${err}`);
     }
 
@@ -41,6 +45,8 @@ class App extends Component {
     return (
       <div className="App">
         <Menu/>
+        <ToastContainer />
+
         {this.state.validators ?
           <div className="container">
             <div className="row">
